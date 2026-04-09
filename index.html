@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Pescado Ahumado Gourmet | Ahumado Artesanal en Santiago</title>
-    <meta name="description" content="Pescado ahumado premium en Santiago. Ahumado con maderas finas, sellado al vacío y cadena de frío. ¡Pide hoy y recibe en 24 hrs!">
-    <meta name="keywords" content="pescado ahumado, salmón ahumado, gourmet, santiago, artesanal, ahumado en frío">
+    <title>AgriChef | Kale, Kimchi y Pescado Ahumado Gourmet</title>
+    <meta name="description" content="Productos gourmet en Santiago: Kale orgánico, Kimchi tradicional, Pescado ahumado y Sierra fresca. Envíos en 24 hrs. ¡Pide por WhatsApp!">
+    <meta name="keywords" content="kale orgánico, kimchi tradicional, pescado ahumado, sierra fresca, gourmet, santiago, artesanal">
     <meta name="author" content="AgriChef">
-    <meta property="og:title" content="Pescado Ahumado Gourmet | Santiago">
-    <meta property="og:description" content="El mejor pescado ahumado artesanal de Santiago. ¡Pide por WhatsApp y recibe en 24 hrs!">
+    <meta property="og:title" content="AgriChef | Productos del Mar y Tierra">
+    <meta property="og:description" content="Kale orgánico, Kimchi artesanal, Pescado ahumado y Sierra fresca. Envíos a todo Santiago en 24 hrs.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=1200&h=630&fit=crop">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agrichef.cl">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐟</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (gratis) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -34,11 +35,14 @@
             --dark-gray: #1a1a1a;
             --gold: #c9a03d;
             --gold-light: #e0b354;
+            --green: #2f6b3e;
+            --green-light: #4a8b5c;
             --wood: #8b5a2b;
             --white: #ffffff;
             --off-white: #f8f6f2;
             --gray-text: #b0b0b0;
             --success: #25D366;
+            --success-hover: #20b859;
         }
 
         body {
@@ -49,39 +53,72 @@
             overflow-x: hidden;
         }
 
-        /* Contenedor responsivo */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* ============================================
-           TIPOGRAFÍA Y ESTILOS GENERALES
+           HEADER MEJORADO
            ============================================ */
-        h1, h2, h3 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(201, 160, 61, 0.2);
+            transition: all 0.3s;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
-        h2:after {
-            content: '';
+        .logo h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green), var(--gold));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: #8b6946;
             display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto 0;
+            font-weight: 500;
+        }
+
+        .header-wa {
+            background: var(--success);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .header-wa:hover {
+            background: var(--success-hover);
+            transform: scale(1.02);
         }
 
         /* ============================================
-           BOTÓN PRINCIPAL DE WHATSAPP (CTA)
+           BOTÓN WHATSAPP
            ============================================ */
         .btn-wa {
             display: inline-flex;
@@ -108,35 +145,44 @@
         .btn-wa:hover {
             transform: scale(1.03);
             box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-            background: #20b859;
+            background: var(--success-hover);
         }
 
-        /* Botón secundario (outline) */
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            box-shadow: none;
+        .btn-wa-small {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--success);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            width: 100%;
         }
 
-        .btn-outline:hover {
-            background: var(--gold);
-            color: var(--black);
+        .btn-wa-small:hover {
+            background: var(--success-hover);
         }
 
         /* ============================================
-           HERO SECTION (PRIMERA PANTALLA)
+           HERO SECTION
            ============================================ */
         .hero {
             background: linear-gradient(135deg, var(--black) 0%, #1f1f1f 100%);
             color: white;
-            padding: 60px 0 80px;
+            border-radius: 2rem;
+            margin: 28px 0 40px;
+            padding: 60px 40px;
             position: relative;
             overflow: hidden;
         }
 
         .hero:before {
-            content: '🐟';
+            content: '🥬🐟🔥';
             position: absolute;
             font-size: 18rem;
             opacity: 0.03;
@@ -190,6 +236,7 @@
             display: flex;
             gap: 24px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .stat {
@@ -202,7 +249,6 @@
 
         .stat i {
             color: var(--gold);
-            font-size: 1.1rem;
         }
 
         .hero-image {
@@ -223,11 +269,28 @@
         }
 
         /* ============================================
-           SECCIÓN DE BENEFICIOS (BULLET POINTS)
+           BENEFICIOS
            ============================================ */
         .benefits {
             padding: 70px 0;
             background: white;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px auto 0;
         }
 
         .benefits-grid {
@@ -258,7 +321,7 @@
         }
 
         /* ============================================
-           PRODUCTOS (TARJETAS)
+           PRODUCTOS (4 productos)
            ============================================ */
         .products {
             padding: 70px 0;
@@ -334,25 +397,6 @@
             color: #888;
         }
 
-        .btn-wa-small {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--success);
-            color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        .btn-wa-small:hover {
-            background: #20b859;
-        }
-
         /* ============================================
            PROCESO ARTESANAL
            ============================================ */
@@ -422,7 +466,7 @@
         }
 
         /* ============================================
-           TESTIMONIOS (PRUEBA SOCIAL)
+           TESTIMONIOS
            ============================================ */
         .testimonials {
             padding: 70px 0;
@@ -442,10 +486,9 @@
             text-align: center;
         }
 
-        .testimonial-card i {
-            font-size: 2rem;
+        .testimonial-card i.fa-star {
             color: var(--gold);
-            margin-bottom: 15px;
+            margin: 0 2px 15px 2px;
         }
 
         .testimonial-text {
@@ -460,7 +503,7 @@
         }
 
         /* ============================================
-           DESPACHO SANTIAGO + URGENCIA
+           DESPACHO + URGENCIA
            ============================================ */
         .shipping {
             padding: 60px 0;
@@ -502,7 +545,6 @@
 
         .shipping-feature i {
             color: var(--gold);
-            font-size: 1.2rem;
         }
 
         /* ============================================
@@ -530,16 +572,47 @@
             background: var(--black);
             color: #888;
             text-align: center;
-            padding: 30px 0;
-            font-size: 0.8rem;
+            padding: 40px 0;
+            margin-top: 0;
+            border-radius: 0;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
         }
 
         /* ============================================
-           RESPONSIVE (MÓVIL)
+           RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
             .container {
                 padding: 0 16px;
+            }
+
+            .hero {
+                padding: 40px 20px;
             }
 
             .hero-content h1 {
@@ -555,8 +628,8 @@
                 justify-content: center;
             }
 
-            h2 {
-                font-size: 1.5rem;
+            .section-title {
+                font-size: 1.6rem;
             }
 
             .products-grid {
@@ -571,259 +644,321 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .benefits, .products, .process, .testimonials, .shipping, .final-cta {
+            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
 <body>
 
 <!-- ============================================
-     HERO - PRIMERA PANTALLA
-     OBJETIVO: Captar atención en 3 segundos
+     HEADER
      ============================================ -->
-<section class="hero">
+<header>
     <div class="container">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i> Ahumado Artesanal · Santiago
+        <div class="navbar">
+            <div class="logo">
+                <h1>🌿 AgriChef <span>productos del mar y tierra</span></h1>
+            </div>
+            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" class="header-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Pedir ahora
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- ============================================
+             HERO
+             ============================================ -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i> Productos Artesanales · Santiago
+                    </div>
+                    <h1>Kale, Kimchi, <span>Pescado Ahumado</span> y Sierra Fresca</h1>
+                    <p>Lo mejor de la tierra y el mar. Productos seleccionados a mano, frescura garantizada y envío en 24 hrs.</p>
+                    
+                    <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20productos%20AgriChef" 
+                       class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                    </a>
+                    
+                    <div class="hero-stats">
+                        <div class="stat"><i class="fas fa-check-circle"></i> +500 clientes felices</div>
+                        <div class="stat"><i class="fas fa-truck"></i> Envío 24 hrs</div>
+                        <div class="stat"><i class="fas fa-leaf"></i> Sin conservantes</div>
+                    </div>
                 </div>
-                <h1>El mejor <span>pescado ahumado</span> gourmet de Santiago</h1>
-                <p>Ahumado en frío con maderas finas. Sellado al vacío y cadena de frío. ¡Llega en 24 hrs a tu casa!</p>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=500&fit=crop" 
+                         alt="Productos AgriChef">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============================================
+         BENEFICIOS
+         ============================================ -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir AgriChef?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Productos orgánicos</h3>
+                    <p>Kale y vegetales de cultivo ecológico, libres de pesticidas.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Ahumado en maderas finas</h3>
+                    <p>Roble, nogal y manzano para un sabor único.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-jar"></i>
+                    <h3>Fermentación natural</h3>
+                    <p>Kimchi tradicional con probióticos vivos.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-box"></i>
+                    <h3>Sellado al vacío</h3>
+                    <p>Máxima frescura y cadena de frío garantizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRODUCTOS (4 productos: Kale, Kimchi, Pescado, Sierra)
+         ============================================ -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Nuestros productos</h2>
+            <div class="products-grid">
                 
-                <!-- CTA PRINCIPAL - WhatsApp -->
-                <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20pedir%20el%20pescado%20ahumado%20gourmet" 
-                   class="btn-wa" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                </a>
+                <!-- Producto 1: Kale Orgánico -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?w=400&h=300&fit=crop');">
+                        <div class="product-badge">Superfood</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kale Orgánico</h3>
+                        <p class="product-desc">Rica en antioxidantes, crujiente y fresca. Cosecha ecológica directamente del campo.</p>
+                        <div class="product-price">$6.900 <small>CLP</small></div>
+                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kale%20Orgánico%20($6.900)" 
+                           class="btn-wa-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </div>
                 
-                <div class="hero-stats">
-                    <div class="stat"><i class="fas fa-check-circle"></i> +500 clientes felices</div>
-                    <div class="stat"><i class="fas fa-truck"></i> Envío 24 hrs</div>
-                    <div class="stat"><i class="fas fa-leaf"></i> Sin conservantes</div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- REEMPLAZAR: Cambia esta imagen por la foto de tu producto -->
-                <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=500&fit=crop" 
-                     alt="Pescado ahumado gourmet">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     BENEFICIOS (BULLET POINTS CLAROS)
-     ============================================ -->
-<section class="benefits">
-    <div class="container">
-        <h2>¿Por qué elegirnos?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <i class="fas fa-fire"></i>
-                <h3>Ahumado en maderas finas</h3>
-                <p>Roble, nogal y manzano para un sabor único y profundo.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-box"></i>
-                <h3>Sellado al vacío</h3>
-                <p>Máxima frescura y duración. Perfecto para regalar.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-snowplow"></i>
-                <h3>Cadena de frío</h3>
-                <p>Transporte refrigerado hasta tu puerta.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-award"></i>
-                <h3>100% Artesanal</h3>
-                <p>Proceso tradicional, sin máquinas industriales.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     PRODUCTOS (TARJETAS CON BOTÓN WHATSAPP)
-     ============================================ -->
-<section class="products">
-    <div class="container">
-        <h2>Nuestros productos estrella</h2>
-        <div class="products-grid">
-            
-            <!-- Producto 1: Salmón Ahumado -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=400&h=300&fit=crop');">
-                    <div class="product-badge">Más vendido</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Salmón Ahumado Premium</h3>
-                    <p class="product-desc">Ahumado en frío por 24 hrs. Textura suave, sabor intenso.</p>
-                    <div class="product-price">$14.900 <small>CLP</small></div>
-                    <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20pedir%20el%20Salmón%20Ahumado%20Premium%20($14.900)" 
-                       class="btn-wa-small" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Producto 2: Sierra Ahumada -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop');">
-                    <div class="product-badge">Edición limitada</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Sierra Ahumada</h3>
-                    <p class="product-desc">Pescado blanco ahumado con madera de nogal. Sabor único.</p>
-                    <div class="product-price">$12.900 <small>CLP</small></div>
-                    <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20pedir%20la%20Sierra%20Ahumada%20($12.900)" 
-                       class="btn-wa-small" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Producto 3: Pack Degustación -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=400&h=300&fit=crop');">
-                    <div class="product-badge">2x1</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Pack Degustación</h3>
-                    <p class="product-desc">Salmón + Sierra + Kimchi artesanal. Ideal para probar todo.</p>
-                    <div class="product-price">$24.900 <small>CLP</small></div>
-                    <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20el%20Pack%20Degustación%20($24.900)" 
-                       class="btn-wa-small" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     PROCESO ARTESANAL (GENERA CONFIANZA)
-     ============================================ -->
-<section class="process">
-    <div class="container">
-        <div class="process-grid">
-            <div class="process-text">
-                <h3>Hecho como hace 100 años</h3>
-                <p>Nuestro proceso de ahumado es completamente artesanal, respetando técnicas tradicionales que realzan el sabor del pescado.</p>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-text">
-                            <h4>Selección del pescado</h4>
-                            <p>Pescado fresco de la costa chilena, seleccionado a mano.</p>
-                        </div>
+                <!-- Producto 2: Kimchi Tradicional -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1619293383058-3e6e9b6b9f0a?w=400&h=300&fit=crop');">
+                        <div class="product-badge">Fermentado</div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-text">
-                            <h4>Salmucra y especias</h4>
-                            <p>Marinado con especias naturales y sal de mar.</p>
-                        </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kimchi Tradicional</h3>
+                        <p class="product-desc">Repollo coreano fermentado, especias auténticas, probióticos naturales y sabor picante equilibrado.</p>
+                        <div class="product-price">$8.500 <small>CLP</small></div>
+                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kimchi%20Tradicional%20($8.500)" 
+                           class="btn-wa-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-text">
-                            <h4>Ahumado en frío</h4>
-                            <p>24 horas con maderas finas (roble, nogal, manzano).</p>
-                        </div>
+                </div>
+                
+                <!-- Producto 3: Pescado Ahumado -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=300&fit=crop');">
+                        <div class="product-badge">Más vendido</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pescado Ahumado</h3>
+                        <p class="product-desc">Ahumado en frío por 24 hrs con maderas finas. Textura suave, sabor intenso y sellado al vacío.</p>
+                        <div class="product-price">$14.900 <small>CLP</small></div>
+                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Pescado%20Ahumado%20($14.900)" 
+                           class="btn-wa-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Producto 4: Sierra Fresca -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=400&h=300&fit=crop');">
+                        <div class="product-badge">Pescado fresco</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sierra Fresca</h3>
+                        <p class="product-desc">Sierra salvaje de costa chilena, filete jugoso, ideal a la parrilla o al horno.</p>
+                        <div class="product-price">$12.500 <small>CLP</small></div>
+                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Sierra%20Fresca%20($12.500)" 
+                           class="btn-wa-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="process-image">
-                <!-- REEMPLAZAR: Foto del proceso de ahumado -->
-                <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=500&h=400&fit=crop" 
-                     alt="Proceso de ahumado artesanal">
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============================================
-     PRUEBA SOCIAL (TESTIMONIOS)
-     ============================================ -->
-<section class="testimonials">
-    <div class="container">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <p class="testimonial-text">"El mejor salmón ahumado que he probado. Llegó perfecto, en 24 hrs. Volveré a pedir."</p>
-                <p class="testimonial-author">— María José, Las Condes</p>
-            </div>
-            <div class="testimonial-card">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <p class="testimonial-text">"Excelente calidad, se nota el ahumado artesanal. Lo recomiendo 100%."</p>
-                <p class="testimonial-author">— Felipe R., Providencia</p>
-            </div>
-            <div class="testimonial-card">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <p class="testimonial-text">"El pack degustación es increíble. Llegó súper bien embalado."</p>
-                <p class="testimonial-author">— Camila G., Ñuñoa</p>
+    <!-- ============================================
+         PROCESO ARTESANAL
+         ============================================ -->
+    <section class="process">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-text">
+                    <h3>Hecho con pasión y tradición</h3>
+                    <p>Nuestro proceso es completamente artesanal, respetando técnicas tradicionales que realzan el sabor y la calidad de cada producto.</p>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h4>Selección de materias primas</h4>
+                                <p>Productos frescos de la costa y campo chileno, seleccionados a mano.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h4>Preparación artesanal</h4>
+                                <p>Marinado con especias naturales y técnicas tradicionales de fermentación.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h4>Ahumado y envasado</h4>
+                                <p>Ahumado en frío con maderas finas y sellado al vacío para máxima frescura.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=500&h=400&fit=crop" 
+                         alt="Proceso artesanal AgriChef">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============================================
-     DESPACHO SANTIAGO + URGENCIA
-     ============================================ -->
-<section class="shipping">
-    <div class="container">
-        <div class="urgency-badge">
-            <i class="fas fa-clock"></i> ¡Solo 50 unidades por semana! Producción limitada
+    <!-- ============================================
+         TESTIMONIOS
+         ============================================ -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p class="testimonial-text">"El kale es súper fresco y crujiente. El kimchi tiene el punto perfecto de picante. Excelente calidad."</p>
+                    <p class="testimonial-author">— María José, Las Condes</p>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p class="testimonial-text">"El pescado ahumado es espectacular. Se nota la calidad artesanal. Llegó en 24 hrs perfectamente refrigerado."</p>
+                    <p class="testimonial-author">— Felipe R., Providencia</p>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p class="testimonial-text">"Pedí el pack completo y todo increíble. La sierra fresca es deliciosa. Volveré a comprar."</p>
+                    <p class="testimonial-author">— Camila G., Ñuñoa</p>
+                </div>
+            </div>
         </div>
-        <h3>Despacho a todo Santiago</h3>
-        <p>Recibe tu pedido en 24 horas con cadena de frío garantizada</p>
-        <div class="shipping-features">
-            <div class="shipping-feature"><i class="fas fa-check-circle"></i> Envíos: Lun a Sáb</div>
-            <div class="shipping-feature"><i class="fas fa-check-circle"></i> Cadena de frío certificada</div>
-            <div class="shipping-feature"><i class="fas fa-check-circle"></i> Pedidos antes de 15hrs → envío mismo día</div>
-        </div>
-        <!-- CTA secundario -->
-        <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
-           class="btn-wa" target="_blank">
-            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-        </a>
-    </div>
-</section>
+    </section>
 
-<!-- ============================================
-     CTA FINAL (CIERRE CON URGENCIA)
-     ============================================ -->
-<section class="final-cta">
-    <div class="container">
-        <h2>¿Listo para probar el mejor pescado ahumado?</h2>
-        <p>✅ Paga contra entrega · ✅ Envío 24 hrs · ✅ Cadena de frío</p>
-        <a href="https://wa.me/56912345678?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
-           class="btn-wa" target="_blank">
-            <i class="fab fa-whatsapp"></i> ¡Quiero mi pedido ahora!
-        </a>
-        <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">* Cupos limitados por producción artesanal</p>
-    </div>
-</section>
+    <!-- ============================================
+         DESPACHO + URGENCIA
+         ============================================ -->
+    <section class="shipping">
+        <div class="container">
+            <div class="urgency-badge">
+                <i class="fas fa-clock"></i> ¡Producción limitada! Reserva con anticipación
+            </div>
+            <h3>Despacho a todo Santiago</h3>
+            <p>Recibe tu pedido en 24 horas con cadena de frío garantizada</p>
+            <div class="shipping-features">
+                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Envíos: Lun a Sáb</div>
+                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Cadena de frío certificada</div>
+                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Pedidos antes de 15hrs → envío mismo día</div>
+            </div>
+            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
+               class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA FINAL
+         ============================================ -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title">¿Listo para probar lo mejor de la tierra y el mar?</h2>
+            <p>✅ Paga contra entrega · ✅ Envío 24 hrs · ✅ Cadena de frío · ✅ Productos artesanales</p>
+            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
+               class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> ¡Quiero mi pedido ahora!
+            </a>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">* Cupos limitados por producción artesanal</p>
+        </div>
+    </section>
+</main>
 
 <!-- ============================================
      FOOTER
      ============================================ -->
 <footer>
     <div class="container">
-        <p>© 2026 Pescado Ahumado Gourmet | Santiago, Chile</p>
-        <p style="margin-top: 10px;">
-            <i class="fab fa-whatsapp"></i> +56 9 1234 5678 | 
-            <i class="fas fa-envelope"></i> hola@pescadoahumado.cl
+        <p>© 2026 AgriChef · Productos del Mar y Tierra · Santiago, Chile</p>
+        <p style="margin-top: 12px;">
+            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/56942174381" target="_blank">+56 9 4217 4381</a> · 
+            <i class="fas fa-envelope"></i> <a href="mailto:contacto@agrichef.cl">contacto@agrichef.cl</a>
         </p>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
     </div>
 </footer>
 
-<!-- Script simple para tracking (opcional) -->
 <script>
-    // Puedes agregar aquí código de píxel de Facebook o Google Analytics
-    console.log("Landing optimizada para CRO - WhatsApp");
+    // Tracking de conversiones (opcional)
+    console.log("Landing AgriChef - Optimizada para conversión por WhatsApp");
+    
+    // Registrar clics en WhatsApp (para Facebook Pixel o Google Analytics)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.addEventListener('click', function() {
+            console.log("Click en WhatsApp: " + this.href);
+            // Aquí puedes agregar código de Facebook Pixel o Google Analytics
+            // Ejemplo: gtag('event', 'conversion', {'send_to': 'AW-XXXXXX'});
+        });
+    });
 </script>
 </body>
 </html>
