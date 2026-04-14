@@ -2,963 +2,1862 @@
 <html lang="es-CL">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>AgriChef | Kale, Kimchi y Pescado Ahumado Gourmet</title>
-    <meta name="description" content="Productos gourmet en Santiago: Kale orgánico, Kimchi tradicional, Pescado ahumado y Sierra fresca. Envíos en 24 hrs. ¡Pide por WhatsApp!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChef | Kale, Kimchi y Pescado Ahumado Gourmet · Santiago</title>
+    <meta name="description" content="Productos gourmet artesanales en Santiago: Kale orgánico, Kimchi tradicional, Pescado ahumado y Sierra fresca. Envíos en 24 hrs. ¡Pide por WhatsApp!">
     <meta name="keywords" content="kale orgánico, kimchi tradicional, pescado ahumado, sierra fresca, gourmet, santiago, artesanal">
     <meta name="author" content="AgriChef">
     <meta property="og:title" content="AgriChef | Productos del Mar y Tierra">
     <meta property="og:description" content="Kale orgánico, Kimchi artesanal, Pescado ahumado y Sierra fresca. Envíos a todo Santiago en 24 hrs.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=1200&h=630&fit=crop">
+    <meta property="og:image" content="images/ahumado1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agrichef.cl">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
+
+    <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* ============================================
-           RESET Y VARIABLES GLOBALES
-           ============================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ========================================
+           RESET & CSS VARIABLES
+           ======================================== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --black: #111111;
-            --dark-gray: #1a1a1a;
-            --gold: #c9a03d;
-            --gold-light: #e0b354;
-            --green: #2f6b3e;
-            --green-light: #4a8b5c;
-            --wood: #8b5a2b;
-            --white: #ffffff;
-            --off-white: #f8f6f2;
-            --gray-text: #b0b0b0;
-            --success: #25D366;
-            --success-hover: #20b859;
+            --black:       #0d0d0d;
+            --dark:        #141414;
+            --dark-card:   #1c1c1c;
+            --gold:        #c9a03d;
+            --gold-light:  #e8c060;
+            --gold-pale:   #f5e6c0;
+            --green:       #2f6b3e;
+            --green-mid:   #3d8a50;
+            --green-light: #5aad6e;
+            --smoke:       #f5f3ee;
+            --white:       #ffffff;
+            --gray:        #888888;
+            --gray-light:  #cccccc;
+            --wa:          #25D366;
+            --wa-hover:    #1fba57;
+            --radius-sm:   10px;
+            --radius-md:   18px;
+            --radius-lg:   28px;
+            --radius-xl:   40px;
+            --shadow-gold: 0 8px 32px rgba(201,160,61,0.25);
+            --shadow-dark: 0 20px 60px rgba(0,0,0,0.35);
+            --shadow-card: 0 12px 40px rgba(0,0,0,0.1);
+            --transition:  0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--off-white);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--smoke);
             color: var(--black);
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
 
-        /* ============================================
-           HEADER MEJORADO
-           ============================================ */
+        img { display: block; }
+
+        /* ========================================
+           HEADER
+           ======================================== */
         header {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(201, 160, 61, 0.2);
-            transition: all 0.3s;
+            z-index: 200;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border-bottom: 1px solid rgba(201,160,61,0.18);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            transition: var(--transition);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 14px 0;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 16px;
         }
 
-        .logo h1 {
-            font-size: 1.7rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--green), var(--gold));
-            background-clip: text;
+        .logo-wrap { display: flex; flex-direction: column; }
+
+        .logo-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--green-light) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-            letter-spacing: -0.5px;
+            line-height: 1;
         }
 
-        .logo span {
-            font-size: 0.8rem;
-            color: #8b6946;
-            display: block;
+        .logo-sub {
+            font-size: 0.68rem;
+            color: rgba(201,160,61,0.65);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
             font-weight: 500;
+            margin-top: 3px;
         }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--gold-light); }
 
         .header-wa {
-            background: var(--success);
+            background: linear-gradient(135deg, var(--wa), var(--wa-hover));
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2s;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+            white-space: nowrap;
         }
 
         .header-wa:hover {
-            background: var(--success-hover);
-            transform: scale(1.02);
+            transform: translateY(-1px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
         }
 
-        /* ============================================
-           BOTÓN WHATSAPP
-           ============================================ */
+        /* ========================================
+           HERO — FONDO ahumado1.png
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/ahumado1.png');
+            background-size: cover;
+            background-position: center 40%;
+            background-attachment: fixed;
+            transition: transform 0.1s linear;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(10,10,10,0.82) 0%,
+                rgba(20,14,5,0.68) 50%,
+                rgba(47,107,62,0.30) 100%
+            );
+        }
+
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 700px;
+            padding: 80px 0;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(201,160,61,0.15);
+            border: 1px solid rgba(201,160,61,0.35);
+            backdrop-filter: blur(8px);
+            padding: 7px 18px;
+            border-radius: 60px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 600;
+            line-height: 1.08;
+            margin-bottom: 24px;
+            animation: fadeUp 0.8s 0.15s ease both;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.72);
+            max-width: 520px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+            animation: fadeUp 0.8s 0.28s ease both;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s 0.40s ease both;
+        }
+
         .btn-wa {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: var(--success);
+            gap: 10px;
+            background: linear-gradient(135deg, var(--wa), var(--wa-hover));
             color: white;
             font-weight: 700;
-            font-size: 1.2rem;
-            padding: 16px 32px;
+            font-size: 1rem;
+            padding: 16px 34px;
             border-radius: 60px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-wa i {
-            font-size: 1.4rem;
+            box-shadow: 0 8px 28px rgba(37,211,102,0.35);
+            letter-spacing: 0.3px;
         }
 
         .btn-wa:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-            background: var(--success-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(37,211,102,0.45);
         }
 
-        .btn-wa-small {
-            display: flex;
+        .btn-outline {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--success);
+            gap: 10px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.25);
             color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 15px 28px;
+            border-radius: 60px;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-            width: 100%;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
         }
 
-        .btn-wa-small:hover {
-            background: var(--success-hover);
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .hero {
-            background: linear-gradient(135deg, var(--black) 0%, #1f1f1f 100%);
-            color: white;
-            border-radius: 2rem;
-            margin: 28px 0 40px;
-            padding: 60px 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero:before {
-            content: '🥬🐟🔥';
-            position: absolute;
-            font-size: 18rem;
-            opacity: 0.03;
-            bottom: -40px;
-            right: -40px;
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .hero-content {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .hero-badge {
-            background: rgba(201, 160, 61, 0.2);
-            backdrop-filter: blur(4px);
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 span {
-            color: var(--gold);
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            margin-bottom: 30px;
-            max-width: 500px;
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(201,160,61,0.5);
+            color: var(--gold-light);
         }
 
         .hero-stats {
             display: flex;
-            gap: 24px;
-            margin-top: 30px;
+            gap: 32px;
+            margin-top: 52px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            animation: fadeUp 0.8s 0.5s ease both;
             flex-wrap: wrap;
         }
 
-        .stat {
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+        .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* Scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 8px;
-            font-size: 0.85rem;
-            color: var(--gray-text);
+            color: rgba(255,255,255,0.35);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 2;
+            animation: scrollBounce 2s infinite;
         }
 
-        .stat i {
+        .hero-scroll i { font-size: 1rem; color: var(--gold); opacity: 0.6; }
+
+        @keyframes scrollBounce {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ========================================
+           TRUST BAR
+           ======================================== */
+        .trust-bar {
+            background: var(--dark);
+            border-top: 1px solid rgba(201,160,61,0.12);
+            border-bottom: 1px solid rgba(201,160,61,0.12);
+        }
+
+        .trust-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 36px;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.82rem;
+            font-weight: 500;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            transition: color 0.2s;
+        }
+
+        .trust-item:last-child { border-right: none; }
+        .trust-item:hover { color: var(--gold-light); }
+        .trust-item i { color: var(--gold); font-size: 1rem; }
+
+        /* ========================================
+           SECTION UTILITY
+           ======================================== */
+        .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             color: var(--gold);
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 280px;
-            text-align: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-
-        .hero-image img:hover {
-            transform: scale(1.02);
-        }
-
-        /* ============================================
-           BENEFICIOS
-           ============================================ */
-        .benefits {
-            padding: 70px 0;
-            background: white;
+            margin-bottom: 16px;
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 20px;
         }
 
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto 0;
+        .section-title em { color: var(--gold); font-style: italic; }
+
+        .divider {
+            width: 52px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 20px 0 40px;
         }
+
+        /* ========================================
+           BENEFITS
+           ======================================== */
+        .benefits { padding: 90px 0; background: white; }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 2px;
+            background: #e8e4dc;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-top: 60px;
         }
 
-        .benefit-card {
-            text-align: center;
-            padding: 20px;
+        .benefit-item {
+            background: white;
+            padding: 36px 28px;
+            transition: background var(--transition);
         }
 
-        .benefit-card i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 15px;
+        .benefit-item:hover { background: var(--smoke); }
+
+        .benefit-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(201,160,61,0.3);
         }
 
-        .benefit-card h3 {
-            font-size: 1.2rem;
+        .benefit-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
-        .benefit-card p {
-            font-size: 0.9rem;
-            color: #555;
-        }
+        .benefit-item p { font-size: 0.88rem; color: #666; line-height: 1.65; }
 
-        /* ============================================
-           PRODUCTOS (4 productos)
-           ============================================ */
-        .products {
-            padding: 70px 0;
-            background: var(--off-white);
+        /* ========================================
+           PRODUCTS
+           ======================================== */
+        .products { padding: 90px 0; background: var(--smoke); }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 28px;
         }
 
         .product-card {
             background: white;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #eee;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-        }
-
-        .product-img {
-            height: 240px;
-            background-size: cover;
-            background-position: center;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
             position: relative;
         }
 
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 60px rgba(0,0,0,0.14), 0 0 0 1px rgba(201,160,61,0.15);
+        }
+
+        .product-img-wrap {
+            position: relative;
+            height: 270px;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .product-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.07);
+        }
+
+        /* Gold shimmer on hover */
+        .product-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(201,160,61,0.12) 100%);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .product-card:hover .product-img-wrap::after { opacity: 1; }
+
         .product-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 14px;
+            right: 14px;
             background: var(--gold);
             color: var(--black);
             font-weight: 700;
-            font-size: 0.7rem;
-            padding: 4px 12px;
+            font-size: 0.65rem;
+            padding: 5px 13px;
             border-radius: 30px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(201,160,61,0.4);
         }
 
-        .product-info {
-            padding: 20px;
-        }
+        .product-info { padding: 24px 24px 26px; }
 
         .product-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 600;
             margin-bottom: 8px;
+            line-height: 1.2;
         }
 
         .product-desc {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            font-size: 0.84rem;
+            color: #777;
+            margin-bottom: 18px;
+            line-height: 1.55;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
         }
 
         .product-price {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--gold);
-            margin-bottom: 15px;
+            line-height: 1;
         }
 
         .product-price small {
-            font-size: 0.8rem;
-            font-weight: normal;
-            color: #888;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            color: #aaa;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
         }
 
-        /* ============================================
-           PROCESO ARTESANAL
-           ============================================ */
-        .process {
-            padding: 70px 0;
-            background: var(--black);
-            color: white;
-        }
-
-        .process-grid {
+        .btn-wa-sm {
             display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--wa), var(--wa-hover));
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.82rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(37,211,102,0.28);
+            white-space: nowrap;
+        }
+
+        .btn-wa-sm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(37,211,102,0.4);
+        }
+
+        /* ========================================
+           AHUMADOS FEATURE — PARALLAX BG
+           ======================================== */
+        .ahumados-section {
+            position: relative;
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ahumados-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/ahumado1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .ahumados-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(10,10,10,0.88) 0%,
+                rgba(10,10,10,0.70) 50%,
+                rgba(10,10,10,0.30) 100%
+            );
+        }
+
+        .ahumados-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 580px;
+            padding: 80px 0;
+        }
+
+        .ahumados-content .section-title { color: white; }
+        .ahumados-content .section-title em { color: var(--gold-light); }
+
+        .ahumados-content p {
+            color: rgba(255,255,255,0.72);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .ahumados-tags {
+            display: flex;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 40px;
+            margin-bottom: 36px;
+        }
+
+        .tag {
+            background: rgba(201,160,61,0.15);
+            border: 1px solid rgba(201,160,61,0.3);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================
+           PROCESO ARTESANAL
+           ======================================== */
+        .process { padding: 90px 0; background: var(--dark); color: white; }
+
+        .process-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
             align-items: center;
         }
 
-        .process-text {
-            flex: 1;
+        .process-img-wrap {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-dark);
         }
 
-        .process-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        .process-img-wrap img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            transition: transform 0.7s ease;
         }
 
-        .process-steps {
-            margin-top: 30px;
+        .process-img-wrap:hover img { transform: scale(1.03); }
+
+        .process-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,10,0.5) 0%, transparent 50%);
+            border-radius: var(--radius-lg);
         }
+
+        .process-img-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: white;
+            font-size: 0.8rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Decorative border accent */
+        .process-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border-radius: calc(var(--radius-lg) - 4px);
+            border: 1px solid rgba(201,160,61,0.2);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .process-text .section-title { color: white; }
+
+        .process-text > p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 42px;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .steps { display: flex; flex-direction: column; gap: 28px; }
 
         .step {
             display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 20px;
             align-items: flex-start;
+            padding: 22px 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
         }
 
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--gold);
+        .step:hover {
+            background: rgba(201,160,61,0.07);
+            border-color: rgba(201,160,61,0.2);
+        }
+
+        .step-num {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
             color: var(--black);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 16px rgba(201,160,61,0.35);
         }
 
-        .step-text h4 {
+        .step-body h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
             margin-bottom: 5px;
+            color: white;
         }
 
-        .step-text p {
-            color: #aaa;
-            font-size: 0.9rem;
+        .step-body p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+        /* ========================================
+           GALLERY — LIGHTBOX GRID
+           ======================================== */
+        .gallery { padding: 90px 0; background: var(--smoke); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 16px;
+            margin-top: 50px;
         }
 
-        .process-image {
-            flex: 1;
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--dark);
+        }
+
+        .gallery-item:nth-child(1) { grid-column: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 220px;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item:hover img { transform: scale(1.06); }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 20px 16px;
+            background: linear-gradient(to top, rgba(10,10,10,0.85), transparent);
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-zoom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            width: 48px;
+            height: 48px;
+            background: rgba(201,160,61,0.9);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-zoom {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.96);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active .lightbox-inner { transform: scale(1); }
+
+        .lightbox-inner img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            max-height: 85vh;
+            object-fit: contain;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        }
+
+        .lightbox-caption {
             text-align: center;
+            color: rgba(255,255,255,0.6);
+            margin-top: 16px;
+            font-size: 0.9rem;
+            font-style: italic;
         }
 
-        .process-image img {
-            max-width: 100%;
-            border-radius: 20px;
+        .lightbox-close {
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            width: 42px;
+            height: 42px;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
         }
 
-        /* ============================================
-           TESTIMONIOS
-           ============================================ */
-        .testimonials {
-            padding: 70px 0;
-            background: white;
-        }
+        .lightbox-close:hover { background: var(--gold-light); transform: scale(1.1); }
+
+        /* ========================================
+           TESTIMONIALS
+           ======================================== */
+        .testimonials { padding: 90px 0; background: white; }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
         }
 
         .testimonial-card {
-            background: var(--off-white);
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
+            background: var(--smoke);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(201,160,61,0.1);
+            transition: var(--transition);
         }
 
-        .testimonial-card i.fa-star {
-            color: var(--gold);
-            margin: 0 2px 15px 2px;
+        .testimonial-card:hover {
+            border-color: rgba(201,160,61,0.3);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-4px);
         }
+
+        .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
 
         .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
             font-style: italic;
-            margin-bottom: 15px;
             color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .testimonial-author {
-            font-weight: 700;
-            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* ============================================
-           DESPACHO + URGENCIA
-           ============================================ */
+        .author-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .author-info { display: flex; flex-direction: column; }
+        .author-name { font-weight: 600; font-size: 0.88rem; }
+        .author-loc { font-size: 0.75rem; color: var(--gray); }
+
+        /* ========================================
+           SHIPPING / URGENCY
+           ======================================== */
         .shipping {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #1a1a1a, var(--black));
+            padding: 80px 0;
+            background: var(--dark);
             color: white;
             text-align: center;
         }
 
-        .urgency-badge {
-            background: rgba(201, 160, 61, 0.15);
-            border: 1px solid var(--gold);
-            display: inline-block;
-            padding: 10px 24px;
+        .urgency-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(201,160,61,0.12);
+            border: 1px solid rgba(201,160,61,0.35);
+            padding: 9px 22px;
             border-radius: 60px;
-            margin-bottom: 25px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+            margin-bottom: 28px;
         }
 
-        .shipping h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+        .urgency-pill::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--wa);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
         }
 
-        .shipping-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        .shipping .section-title { color: white; margin-bottom: 12px; }
+
+        .shipping > .container > p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            margin-bottom: 44px;
+        }
+
+        .shipping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2px;
+            background: rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto 50px;
         }
 
         .shipping-feature {
+            padding: 26px 20px;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .shipping-feature:hover { background: rgba(201,160,61,0.06); }
+
+        .shipping-feature i {
+            font-size: 1.6rem;
+            color: var(--gold);
+        }
+
+        .shipping-feature span {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           FINAL CTA
+           ======================================== */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--green) 0%, #1a3d27 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .final-cta-inner { position: relative; z-index: 2; }
+
+        .final-cta .section-label { color: rgba(255,255,255,0.5); }
+        .final-cta .section-title { color: white; margin-bottom: 16px; }
+        .final-cta .section-title em { color: var(--gold-light); }
+
+        .final-cta > .container > .final-cta-inner > p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+
+        .cta-chip {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 7px 15px;
+            border-radius: 30px;
+        }
+
+        .cta-chip i { color: var(--gold-light); font-size: 0.9rem; }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--black);
+            color: #666;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(201,160,61,0.1);
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 28px;
+        }
+
+        .footer-brand .logo-name { font-size: 1.6rem; margin-bottom: 6px; }
+        .footer-brand .logo-sub { font-size: 0.65rem; color: rgba(201,160,61,0.45); margin-bottom: 18px; }
+        .footer-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.35); line-height: 1.7; margin-bottom: 20px; }
+
+        .social-row { display: flex; gap: 14px; }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: rgba(201,160,61,0.15);
+            border-color: rgba(201,160,61,0.3);
+            color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-col h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 18px;
+        }
+
+        .footer-links { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            font-size: 0.83rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--gold-light); }
+
+        .footer-contact { display: flex; flex-direction: column; gap: 12px; }
+
+        .contact-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.9rem;
+            font-size: 0.83rem;
+            color: rgba(255,255,255,0.35);
         }
 
-        .shipping-feature i {
-            color: var(--gold);
-        }
+        .contact-item i { color: var(--gold); width: 16px; text-align: center; }
+        .contact-item a { color: rgba(255,255,255,0.35); text-decoration: none; }
+        .contact-item a:hover { color: var(--gold-light); }
 
-        /* ============================================
-           CTA FINAL
-           ============================================ */
-        .final-cta {
-            padding: 70px 0;
-            background: var(--off-white);
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            margin-bottom: 20px;
-        }
-
-        .final-cta p {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: var(--black);
-            color: #888;
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 0;
-            border-radius: 0;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .social-links {
+        .footer-bottom {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .social-links a {
-            color: var(--gold);
-            font-size: 1.5rem;
-            transition: transform 0.2s;
+        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.2); }
+
+        /* ========================================
+           SCROLL REVEAL ANIMATION
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-        .social-links a:hover {
-            transform: scale(1.1);
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* ============================================
+        /* Staggered children */
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
+        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: none; }
+        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; opacity: 1; transform: none; }
+        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: none; }
+        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: none; }
+        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: none; }
+
+        /* ========================================
+           HERO ANIMATION
+           ======================================== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========================================
            RESPONSIVE
-           ============================================ */
+           ======================================== */
+        @media (max-width: 1024px) {
+            .process-inner { grid-template-columns: 1fr; gap: 40px; }
+            .process-img-wrap img { height: 400px; }
+            .nav-links { display: none; }
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .hero {
-                padding: 40px 20px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .btn-wa {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .products-grid {
-                gap: 20px;
-            }
-
-            .process-grid {
-                flex-direction: column;
-            }
-
-            .shipping-features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
+            .container { padding: 0 18px; }
+            .hero { min-height: 80vh; }
+            .hero-content { padding: 60px 0; }
+            .hero-stats { gap: 20px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-item:nth-child(1) { grid-column: span 2; }
+            .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { justify-content: center; text-align: center; }
+            .trust-inner { justify-content: center; }
+            .trust-item { padding: 14px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .trust-item:last-child { border-bottom: none; }
         }
 
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero, .benefits, .products, .process, .testimonials, .shipping, .final-cta {
-            animation: fadeInUp 0.6s ease-out forwards;
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.4rem; }
+            .btn-wa { width: 100%; font-size: 0.95rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:nth-child(1) { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-<!-- ============================================
-     HEADER
-     ============================================ -->
+<!-- ==================== HEADER ==================== -->
 <header>
     <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <h1>🌿 AgriChef <span>productos del mar y tierra</span></h1>
-            </div>
-            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" class="header-wa" target="_blank">
+        <nav class="navbar">
+            <a href="#" class="logo-wrap" style="text-decoration:none">
+                <span class="logo-name">🌿 AgriChef</span>
+                <span class="logo-sub">Productos del Mar y Tierra</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+            </ul>
+            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" class="header-wa" target="_blank" rel="noopener">
                 <i class="fab fa-whatsapp"></i> Pedir ahora
             </a>
-        </div>
+        </nav>
     </div>
 </header>
 
 <main>
-    <div class="container">
-        <!-- ============================================
-             HERO
-             ============================================ -->
-        <section class="hero">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-star"></i> Productos Artesanales · Santiago
-                    </div>
-                    <h1>Kale, Kimchi, <span>Pescado Ahumado</span> y Sierra Fresca</h1>
-                    <p>Lo mejor de la tierra y el mar. Productos seleccionados a mano, frescura garantizada y envío en 24 hrs.</p>
-                    
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grain"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <i class="fas fa-fire" style="color:var(--gold)"></i>
+                    Artesanal · Santiago · Envío 24 hrs
+                </div>
+                <h1 class="hero-title">
+                    Kale, Kimchi,<br>
+                    <em>Pescado Ahumado</em><br>
+                    y Sierra Fresca
+                </h1>
+                <p class="hero-subtitle">
+                    Lo mejor de la tierra y el mar chileno. Seleccionados a mano, 
+                    ahumados en frío con maderas finas y entregados con cadena de frío 
+                    garantizada.
+                </p>
+                <div class="hero-actions">
                     <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20productos%20AgriChef" 
-                       class="btn-wa" target="_blank">
+                       class="btn-wa" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
                     </a>
-                    
-                    <div class="hero-stats">
-                        <div class="stat"><i class="fas fa-check-circle"></i> +500 clientes felices</div>
-                        <div class="stat"><i class="fas fa-truck"></i> Envío 24 hrs</div>
-                        <div class="stat"><i class="fas fa-leaf"></i> Sin conservantes</div>
+                    <a href="#productos" class="btn-outline">
+                        <i class="fas fa-arrow-down"></i> Ver productos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">+500</span>
+                        <span class="stat-label">Clientes felices</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24h</span>
+                        <span class="stat-label">Envío garantizado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Sin conservantes</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=500&fit=crop" 
-                         alt="Productos AgriChef">
-                </div>
             </div>
-        </section>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST BAR ==================== -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-item"><i class="fas fa-seedling"></i> Cultivo orgánico certificado</div>
+                <div class="trust-item"><i class="fas fa-fire"></i> Ahumado artesanal en maderas finas</div>
+                <div class="trust-item"><i class="fas fa-snowflake"></i> Cadena de frío certificada</div>
+                <div class="trust-item"><i class="fas fa-truck"></i> Lun a Sáb · pedidos antes 15:00</div>
+                <div class="trust-item"><i class="fas fa-hand-holding-heart"></i> Pago contra entrega</div>
+            </div>
+        </div>
     </div>
 
-    <!-- ============================================
-         BENEFICIOS
-         ============================================ -->
-    <section class="benefits">
+    <!-- ==================== BENEFITS ==================== -->
+    <section class="benefits" id="beneficios">
         <div class="container">
-            <h2 class="section-title">¿Por qué elegir AgriChef?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-seedling"></i>
+            <div class="reveal">
+                <span class="section-label">¿Por qué AgriChef?</span>
+                <h2 class="section-title">Calidad que se <em>siente</em> en cada bocado</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="benefits-grid reveal-stagger">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-seedling"></i></div>
                     <h3>Productos orgánicos</h3>
-                    <p>Kale y vegetales de cultivo ecológico, libres de pesticidas.</p>
+                    <p>Kale y vegetales de cultivo ecológico, libres de pesticidas y con trazabilidad de origen.</p>
                 </div>
-                <div class="benefit-card">
-                    <i class="fas fa-fire"></i>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-fire"></i></div>
                     <h3>Ahumado en maderas finas</h3>
-                    <p>Roble, nogal y manzano para un sabor único.</p>
+                    <p>Roble, nogal y manzano cuidadosamente seleccionados para un perfil de sabor único.</p>
                 </div>
-                <div class="benefit-card">
-                    <i class="fas fa-jar"></i>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-jar"></i></div>
                     <h3>Fermentación natural</h3>
-                    <p>Kimchi tradicional con probióticos vivos.</p>
+                    <p>Kimchi tradicional con probióticos vivos, preparado según receta coreana auténtica.</p>
                 </div>
-                <div class="benefit-card">
-                    <i class="fas fa-box"></i>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-box"></i></div>
                     <h3>Sellado al vacío</h3>
-                    <p>Máxima frescura y cadena de frío garantizada.</p>
+                    <p>Máxima frescura garantizada con packaging profesional y cadena de frío completa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         PRODUCTOS (4 productos: Kale, Kimchi, Pescado, Sierra)
-         ============================================ -->
-    <section class="products">
+    <!-- ==================== PRODUCTS ==================== -->
+    <section class="products" id="productos">
         <div class="container">
-            <h2 class="section-title">Nuestros productos</h2>
-            <div class="products-grid">
-                
-                <!-- Producto 1: Kale Orgánico -->
+            <div class="products-header reveal">
+                <div>
+                    <span class="section-label">Nuestra selección</span>
+                    <h2 class="section-title">Nuestros <em>productos</em></h2>
+                    <div class="divider" style="margin-bottom:0"></div>
+                </div>
+            </div>
+            <div class="products-grid reveal-stagger">
+
+                <!-- Kale Orgánico -->
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?w=400&h=300&fit=crop');">
+                    <div class="product-img-wrap">
+                        <img src="images/kale2.png" 
+                             alt="Kale orgánico fresco cultivado ecológicamente en Santiago"
+                             loading="lazy">
                         <div class="product-badge">Superfood</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Kale Orgánico</h3>
-                        <p class="product-desc">Rica en antioxidantes, crujiente y fresca. Cosecha ecológica directamente del campo.</p>
-                        <div class="product-price">$6.900 <small>CLP</small></div>
-                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kale%20Orgánico%20($6.900)" 
-                           class="btn-wa-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                        </a>
+                        <p class="product-desc">Rica en antioxidantes, crujiente y fresca. Cosecha ecológica directamente del campo, sin pesticidas.</p>
+                        <div class="product-footer">
+                            <div class="product-price">$6.900 <small>CLP / unidad</small></div>
+                            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kale%20Orgánico%20($6.900)" 
+                               class="btn-wa-sm" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> Pedir
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Producto 2: Kimchi Tradicional -->
+
+                <!-- Kimchi Tradicional -->
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1619293383058-3e6e9b6b9f0a?w=400&h=300&fit=crop');">
+                    <div class="product-img-wrap">
+                        <img src="images/kimchi.png" 
+                             alt="Kimchi tradicional coreano fermentado artesanalmente con especias auténticas"
+                             loading="lazy">
                         <div class="product-badge">Fermentado</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Kimchi Tradicional</h3>
                         <p class="product-desc">Repollo coreano fermentado, especias auténticas, probióticos naturales y sabor picante equilibrado.</p>
-                        <div class="product-price">$8.500 <small>CLP</small></div>
-                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kimchi%20Tradicional%20($8.500)" 
-                           class="btn-wa-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                        </a>
+                        <div class="product-footer">
+                            <div class="product-price">$8.500 <small>CLP / frasco</small></div>
+                            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kimchi%20Tradicional%20($8.500)" 
+                               class="btn-wa-sm" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> Pedir
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Producto 3: Pescado Ahumado -->
+
+                <!-- Pescado Ahumado -->
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=300&fit=crop');">
+                    <div class="product-img-wrap">
+                        <img src="images/sierraahumada1.png" 
+                             alt="Pescado ahumado en frío artesanalmente con maderas de roble y nogal, sellado al vacío"
+                             loading="lazy">
                         <div class="product-badge">Más vendido</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Pescado Ahumado</h3>
                         <p class="product-desc">Ahumado en frío por 24 hrs con maderas finas. Textura suave, sabor intenso y sellado al vacío.</p>
-                        <div class="product-price">$14.900 <small>CLP</small></div>
-                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Pescado%20Ahumado%20($14.900)" 
-                           class="btn-wa-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                        </a>
+                        <div class="product-footer">
+                            <div class="product-price">$14.900 <small>CLP / kg</small></div>
+                            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Pescado%20Ahumado%20($14.900)" 
+                               class="btn-wa-sm" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> Pedir
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Producto 4: Sierra Fresca -->
+
+                <!-- Sierra Fresca -->
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=400&h=300&fit=crop');">
+                    <div class="product-img-wrap">
+                        <img src="images/sierrafresca.png" 
+                             alt="Sierra fresca salvaje de la costa chilena, filete jugoso ideal a la parrilla"
+                             loading="lazy">
                         <div class="product-badge">Pescado fresco</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Sierra Fresca</h3>
-                        <p class="product-desc">Sierra salvaje de costa chilena, filete jugoso, ideal a la parrilla o al horno.</p>
-                        <div class="product-price">$12.500 <small>CLP</small></div>
-                        <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Sierra%20Fresca%20($12.500)" 
-                           class="btn-wa-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                        </a>
+                        <p class="product-desc">Sierra salvaje de costa chilena, filete jugoso, ideal a la parrilla o al horno. Frescura del día.</p>
+                        <div class="product-footer">
+                            <div class="product-price">$12.500 <small>CLP / kg</small></div>
+                            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Sierra%20Fresca%20($12.500)" 
+                               class="btn-wa-sm" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> Pedir
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         PROCESO ARTESANAL
-         ============================================ -->
-    <section class="process">
+    <!-- ==================== AHUMADOS FEATURE ==================== -->
+    <section class="ahumados-section" id="ahumados">
+        <div class="ahumados-bg" id="ahumadosBg"></div>
+        <div class="ahumados-overlay"></div>
         <div class="container">
-            <div class="process-grid">
-                <div class="process-text">
-                    <h3>Hecho con pasión y tradición</h3>
-                    <p>Nuestro proceso es completamente artesanal, respetando técnicas tradicionales que realzan el sabor y la calidad de cada producto.</p>
-                    <div class="process-steps">
+            <div class="ahumados-content reveal">
+                <span class="section-label">Nuestro proceso estrella</span>
+                <h2 class="section-title" style="color:white">El arte del <em>ahumado</em><br>artesanal</h2>
+                <div class="divider"></div>
+                <p>Cada pieza se ahúma lentamente a baja temperatura durante 24 horas con maderas de roble, nogal y manzano seleccionadas a mano. El resultado: una textura incomparable y un sabor profundo que no se logra de otra manera.</p>
+                <div class="ahumados-tags">
+                    <span class="tag">🌳 Roble chileno</span>
+                    <span class="tag">🥜 Nogal</span>
+                    <span class="tag">🍎 Manzano</span>
+                    <span class="tag">❄️ Frío controlado</span>
+                    <span class="tag">⏱ 24 horas</span>
+                </div>
+                <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Pescado%20Ahumado%20($14.900)" 
+                   class="btn-wa" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Pedir pescado ahumado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESO ARTESANAL ==================== -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="process-inner">
+                <div class="process-img-wrap reveal">
+                    <img src="images/verdura1.png" 
+                         alt="Proceso artesanal AgriChef — selección de vegetales frescos de cultivo orgánico"
+                         loading="lazy">
+                    <div class="process-img-overlay"></div>
+                    <p class="process-img-caption">Selección artesanal de materias primas · AgriChef</p>
+                </div>
+                <div class="process-text reveal">
+                    <span class="section-label">Hecho con pasión</span>
+                    <h2 class="section-title" style="color:white">Tradición y <em>técnica</em><br>en cada producto</h2>
+                    <div class="divider"></div>
+                    <p>Un proceso completamente artesanal, respetando técnicas tradicionales que realzan el sabor y la calidad de cada producto que llega a tu mesa.</p>
+                    <div class="steps reveal-stagger">
                         <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-text">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
                                 <h4>Selección de materias primas</h4>
-                                <p>Productos frescos de la costa y campo chileno, seleccionados a mano.</p>
+                                <p>Productos frescos de la costa y campo chileno, seleccionados a mano con criterio gourmet.</p>
                             </div>
                         </div>
                         <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-text">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
                                 <h4>Preparación artesanal</h4>
-                                <p>Marinado con especias naturales y técnicas tradicionales de fermentación.</p>
+                                <p>Marinado con especias naturales y técnicas tradicionales de fermentación y curado.</p>
                             </div>
                         </div>
                         <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-text">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
                                 <h4>Ahumado y envasado</h4>
-                                <p>Ahumado en frío con maderas finas y sellado al vacío para máxima frescura.</p>
+                                <p>Ahumado en frío con maderas finas y sellado al vacío para máxima frescura en el despacho.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="process-image">
-                    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=500&h=400&fit=crop" 
-                         alt="Proceso artesanal AgriChef">
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         TESTIMONIOS
-         ============================================ -->
-    <section class="testimonials">
+    <!-- ==================== GALERÍA GOURMET ==================== -->
+    <section class="gallery" id="galeria">
         <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-            <div class="testimonials-grid">
+            <div class="reveal" style="text-align:center">
+                <span class="section-label">Galería gourmet</span>
+                <h2 class="section-title">Una imagen vale <em>mil sabores</em></h2>
+                <div class="divider" style="margin:20px auto 0; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
+            </div>
+            <div class="gallery-grid reveal-stagger">
+
+                <div class="gallery-item" onclick="openLightbox('images/kimchiplato.png','Kimchi presentado en plato — sabor auténtico coreano')">
+                    <img src="images/kimchiplato.png" 
+                         alt="Kimchi tradicional presentado en plato, fermentado artesanalmente"
+                         loading="lazy"
+                         style="min-height:300px">
+                    <div class="gallery-caption">Kimchi — presentación gourmet</div>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('images/sierraahumada2.png','Sierra ahumada — ahumado artesanal en maderas finas')">
+                    <img src="images/sierraahumada2.png" 
+                         alt="Sierra ahumada artesanalmente con maderas finas en Santiago"
+                         loading="lazy"
+                         style="min-height:300px">
+                    <div class="gallery-caption">Sierra ahumada — terminación perfecta</div>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('images/kale2.png','Kale orgánico fresco — cosecha ecológica')">
+                    <img src="images/kale2.png" 
+                         alt="Kale orgánico fresco de cultivo ecológico"
+                         loading="lazy"
+                         style="min-height:220px">
+                    <div class="gallery-caption">Kale orgánico — cosecha del día</div>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('images/sierrafresca.png','Sierra fresca de la costa chilena')">
+                    <img src="images/sierrafresca.png" 
+                         alt="Sierra fresca capturada en la costa chilena"
+                         loading="lazy"
+                         style="min-height:220px">
+                    <div class="gallery-caption">Sierra fresca — directo del mar chileno</div>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('images/ahumado1.png','El proceso de ahumado artesanal con maderas finas')">
+                    <img src="images/ahumado1.png" 
+                         alt="Proceso de ahumado artesanal con maderas seleccionadas"
+                         loading="lazy"
+                         style="min-height:220px">
+                    <div class="gallery-caption">El ahumador — arte y tradición</div>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="reveal" style="text-align:center">
+                <span class="section-label">Clientes felices</span>
+                <h2 class="section-title">Lo que <em>dicen</em> de nosotros</h2>
+                <div class="divider" style="margin:20px auto 0; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
+            </div>
+            <div class="testimonials-grid reveal-stagger">
                 <div class="testimonial-card">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p class="testimonial-text">"El kale es súper fresco y crujiente. El kimchi tiene el punto perfecto de picante. Excelente calidad."</p>
-                    <p class="testimonial-author">— María José, Las Condes</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"El kale es súper fresco y crujiente. El kimchi tiene el punto perfecto de picante. Excelente calidad, llevan semanas en mis pedidos semanales."</p>
+                    <div class="testimonial-author">
+                        <div class="author-dot">MJ</div>
+                        <div class="author-info">
+                            <span class="author-name">María José L.</span>
+                            <span class="author-loc">Las Condes, Santiago</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p class="testimonial-text">"El pescado ahumado es espectacular. Se nota la calidad artesanal. Llegó en 24 hrs perfectamente refrigerado."</p>
-                    <p class="testimonial-author">— Felipe R., Providencia</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"El pescado ahumado es espectacular. Se nota la calidad artesanal en el sabor. Llegó en 24 hrs perfectamente refrigerado y sellado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-dot">FR</div>
+                        <div class="author-info">
+                            <span class="author-name">Felipe R.</span>
+                            <span class="author-loc">Providencia, Santiago</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p class="testimonial-text">"Pedí el pack completo y todo increíble. La sierra fresca es deliciosa. Volveré a comprar."</p>
-                    <p class="testimonial-author">— Camila G., Ñuñoa</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Pedí el pack completo y todo increíble. La sierra fresca es deliciosa a la parrilla. Presentación cuidada, precio justo. Volveré a comprar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-dot">CG</div>
+                        <div class="author-info">
+                            <span class="author-name">Camila G.</span>
+                            <span class="author-loc">Ñuñoa, Santiago</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         DESPACHO + URGENCIA
-         ============================================ -->
+    <!-- ==================== SHIPPING ==================== -->
     <section class="shipping">
         <div class="container">
-            <div class="urgency-badge">
-                <i class="fas fa-clock"></i> ¡Producción limitada! Reserva con anticipación
+            <div class="urgency-pill">
+                <i class="fas fa-clock"></i> Producción limitada — ¡Reserva con anticipación!
             </div>
-            <h3>Despacho a todo Santiago</h3>
-            <p>Recibe tu pedido en 24 horas con cadena de frío garantizada</p>
-            <div class="shipping-features">
-                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Envíos: Lun a Sáb</div>
-                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Cadena de frío certificada</div>
-                <div class="shipping-feature"><i class="fas fa-check-circle"></i> Pedidos antes de 15hrs → envío mismo día</div>
+            <h2 class="section-title" style="color:white; font-family:'Cormorant Garamond',serif">
+                Despacho a todo <em>Santiago</em>
+            </h2>
+            <p>Recibe tu pedido en 24 horas con cadena de frío garantizada de puerta a puerta.</p>
+            <div class="shipping-grid">
+                <div class="shipping-feature">
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Envíos Lun a Sáb</span>
+                </div>
+                <div class="shipping-feature">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Cadena de frío certificada</span>
+                </div>
+                <div class="shipping-feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Pedidos antes 15:00<br>→ envío mismo día</span>
+                </div>
+                <div class="shipping-feature">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Pago contra entrega</span>
+                </div>
             </div>
             <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
-               class="btn-wa" target="_blank">
+               class="btn-wa" target="_blank" rel="noopener">
                 <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
             </a>
         </div>
     </section>
 
-    <!-- ============================================
-         CTA FINAL
-         ============================================ -->
+    <!-- ==================== FINAL CTA ==================== -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="section-title">¿Listo para probar lo mejor de la tierra y el mar?</h2>
-            <p>✅ Paga contra entrega · ✅ Envío 24 hrs · ✅ Cadena de frío · ✅ Productos artesanales</p>
-            <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
-               class="btn-wa" target="_blank">
-                <i class="fab fa-whatsapp"></i> ¡Quiero mi pedido ahora!
-            </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">* Cupos limitados por producción artesanal</p>
+            <div class="final-cta-inner">
+                <span class="section-label">¿Listo para probar?</span>
+                <h2 class="section-title">Lo mejor de la <em>tierra y el mar</em><br>a tu puerta</h2>
+                <p>Un mensaje por WhatsApp es todo lo que necesitas. Paga al recibir, sin complicaciones.</p>
+                <div class="cta-chips">
+                    <span class="cta-chip"><i class="fas fa-check"></i> Pago contra entrega</span>
+                    <span class="cta-chip"><i class="fas fa-truck"></i> Envío 24 hrs</span>
+                    <span class="cta-chip"><i class="fas fa-snowflake"></i> Cadena de frío</span>
+                    <span class="cta-chip"><i class="fas fa-leaf"></i> Sin conservantes</span>
+                    <span class="cta-chip"><i class="fas fa-award"></i> Artesanal 100%</span>
+                </div>
+                <a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20hacer%20un%20pedido" 
+                   class="btn-wa" target="_blank" rel="noopener" style="font-size:1.1rem; padding:18px 40px;">
+                    <i class="fab fa-whatsapp"></i> ¡Quiero mi pedido ahora!
+                </a>
+                <p style="margin-top:18px; font-size:0.78rem; color:rgba(255,255,255,0.4);">
+                    * Cupos limitados por producción artesanal · agrichef.cl
+                </p>
+            </div>
         </div>
     </section>
 </main>
 
-<!-- ============================================
-     FOOTER
-     ============================================ -->
+<!-- ==================== FOOTER ==================== -->
 <footer>
     <div class="container">
-        <p>© 2026 AgriChef · Productos del Mar y Tierra · Santiago, Chile</p>
-        <p style="margin-top: 12px;">
-            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/56942174381" target="_blank">+56 9 4217 4381</a> · 
-            <i class="fas fa-envelope"></i> <a href="mailto:contacto@agrichef.cl">contacto@agrichef.cl</a>
-        </p>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo-name">🌿 AgriChef</div>
+                <div class="logo-sub">Productos del Mar y Tierra</div>
+                <p>Productos gourmet artesanales directo del campo y la costa chilena a tu mesa. Sin conservantes, sin intermediarios.</p>
+                <div class="social-row">
+                    <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Instagram AgriChef"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Facebook AgriChef"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="TikTok AgriChef"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h5>Productos</h5>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kale%20Orgánico">Kale Orgánico — $6.900</a></li>
+                    <li><a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Kimchi%20Tradicional">Kimchi Tradicional — $8.500</a></li>
+                    <li><a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Pescado%20Ahumado">Pescado Ahumado — $14.900</a></li>
+                    <li><a href="https://wa.me/56942174381?text=Hola%21%20Quiero%20pedir%20Sierra%20Fresca">Sierra Fresca — $12.500</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contacto</h5>
+                <div class="footer-contact">
+                    <div class="contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/56942174381" target="_blank" rel="noopener">+56 9 4217 4381</a></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:contacto@agrichef.cl">contacto@agrichef.cl</a></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Santiago, Chile</span></div>
+                    <div class="contact-item"><i class="fas fa-clock"></i><span>Lun–Sáb · 9:00–19:00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 AgriChef · Productos del Mar y Tierra · Santiago, Chile</p>
+            <p>Diseñado con ♥ para los amantes del buen comer</p>
         </div>
     </div>
 </footer>
 
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <div class="lightbox-inner">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar galería">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+</div>
+
 <script>
-    // Tracking de conversiones (opcional)
-    console.log("Landing AgriChef - Optimizada para conversión por WhatsApp");
-    
-    // Registrar clics en WhatsApp (para Facebook Pixel o Google Analytics)
-    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-        link.addEventListener('click', function() {
-            console.log("Click en WhatsApp: " + this.href);
-            // Aquí puedes agregar código de Facebook Pixel o Google Analytics
-            // Ejemplo: gtag('event', 'conversion', {'send_to': 'AW-XXXXXX'});
+    /* ============ LIGHTBOX ============ */
+    function openLightbox(src, caption) {
+        const lb = document.getElementById('lightbox');
+        document.getElementById('lightboxImg').src = src;
+        document.getElementById('lightboxImg').alt = caption;
+        document.getElementById('lightboxCaption').textContent = caption;
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBg(e) {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ============ SCROLL REVEAL ============ */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ============ PARALLAX HERO BG ============ */
+    const heroBg = document.getElementById('heroBg');
+    const ahumadosBg = document.getElementById('ahumadosBg');
+
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrollY * 0.28}px)`;
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    /* ============ SMOOTH ANCHOR SCROLL ============ */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
+
+    /* ============ WA CLICK TRACKING ============ */
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.addEventListener('click', function() {
+            console.log('WhatsApp click:', this.href);
+            // Aquí puedes agregar Facebook Pixel o Google Analytics:
+            // gtag('event', 'conversion', {'send_to': 'AW-XXXXXX'});
+            // fbq('track', 'InitiateCheckout');
+        });
+    });
+
+    /* ============ HEADER SCROLL SHADOW ============ */
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 4px 40px rgba(0,0,0,0.6)';
+        } else {
+            header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+        }
+    }, { passive: true });
 </script>
+
 </body>
 </html>
